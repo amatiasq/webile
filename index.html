@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>PROYECT_TITLE</title>
+		<title>Webile</title>
 		<meta name="viewport" content="width=device-width">
 
 		<link rel="stylesheet/less" type="text/css" href="css/main.less">
@@ -16,30 +16,149 @@
 	</head>
 	<body>
 
-		<div id="page-content" style="display:none">
+		<header>
+			<h1>Backlog</h1>
+			<nav class="desplegable">
+				<a href="#/backlog" id="backlog">Backlog</a>
+				<a href="#/work" id="work">Work</a>
+				<a href="#/report" id="report">Report</a>
+			</nav>
+		</header>
 
-			<section id="error">
-				Sorry, the url is not known
+		<div id="page-content">
+
+
+			<!-- CONFIG -->
+			<section id="config">
+
+				<div class="list editable" id="users">
+					<a href="#/config/user/create">+ Create user</a>
+					<ul>
+						<li>A. Matías Quezada <a href="#/config/user/remove/1">X</a></li>
+						<li>Oriol Torras <a href="#/config/user/remove/2">X</a></li>
+					</ul>
+				</div>
+
+				<div class="list editable" id="projects">
+					<a href="#/config/project/create">+ Create project</a>
+					<ul>
+						<li>Webile <a href="#/config/project/remove/1">X</a></li>
+						<li>Pomo <a href="#/config/project/remove/2">X</a></li>
+					</ul>
+				</div>
+
+				<div class="list editable" id="organizations">
+					<a href="#/config/organization/create">+ Create organization</a>
+					<ul>
+						<li>Me <a href="#/config/organization/remove/1">X</a></li>
+						<li>You <a href="#/config/organization/remove/2">X</a></li>
+						<li>Him/Her <a href="#/config/organization/remove/3">X</a></li>
+					</ul>
+				</div>
+
 			</section>
+			<!-- CONFIG -->
 
-			<!-- SAMPLE PAGE -->
-			<section id="sample-page">
-				<header>
-					<h2>SAMPLE PAGE</h2>
-				</header>
-				<div class="content"></div>
+
+			<!-- BACKLOG -->
+			<section id="backlog">
+
+				<div class="list editable" id="epics">
+					<a href="#/backlog/epic/create">+ Create epic</a>
+					<ul>
+
+						<li>
+							<h3>Create Backlog Section <a href="#/backlog/epic/remove/1">X</a></h3>
+							<div class="list editable" id="epic/1/us">
+								<a href="#/backlog/us/create?epic=1">+ Create user story</a>
+								<ul>
+									<li>As a user I wish to add epics <a href="#/backlog/us/remove/1">X</a></li>
+									<li>As a user I wish to remove epics <a href="#/backlog/us/remove/2">X</a></li>
+									<li>As a user I wish to add user stories to epics <a href="#/backlog/us/remove/3">X</a></li>
+									<li>As a user I wish to remove user stories to epics <a href="#/backlog/us/remove/4">X</a></li>
+									<li>As a user I wish to drag &amp; drop user stories between epics <a href="#/backlog/us/remove/5">X</a></li>
+								</ul>
+							</div>
+						</li>
+
+						<li>
+							<h3>Create Config Section <a href="#/backlog/epic/remove/1">X</a></h3>
+							<div class="list editable" id="epic/1/us">
+								<a href="#/backlog/us/create?epic=1">+ Create user story</a>
+								<ul>
+									<li>As a user I wish to add users <a href="#/backlog/us/remove/6">X</a></li>
+									<li>As a user I wish to remove users <a href="#/backlog/us/remove/7">X</a></li>
+									<li>As a user I wish to add projects <a href="#/backlog/us/remove/8">X</a></li>
+									<li>As a user I wish to remove projects <a href="#/backlog/us/remove/9">X</a></li>
+									<li>As a user I wish to add organizations <a href="#/backlog/us/remove/10">X</a></li>
+									<li>As a user I wish to remove organizations <a href="#/backlog/us/remove/11">X</a></li>
+								</ul>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+
 			</section>
-			<!-- SAMPLE PAGE -->
+			<!-- BACKLOG -->
 
 
-			<!-- PAGE 2 -->
-			<section id="page2">
-				<header>
-					<h2>PAGE 2</h2>
-				</header>
-				<div></div>
+			<!-- SPRINT-PLANNING -->
+			<section id="sprint-planning">
+
+				<!-- IN PROGRESS -->
+
 			</section>
-			<!-- PAGE 2 -->
+			<!-- SPRINT-PLANNING -->
+
+
+			<!-- WORK -->
+			<section id="work">
+
+				<!-- Only one panel visible at once, touch and hold a task to send it to another panel -->
+
+				<ul class="kanban-panel" id="work-todo">
+					<li>
+						<h3><a href="#/work/us/1">As a user I wish to add epics</a></h3>
+						<ul class="kamban-card-container">
+							<li><a href="#/work/task/2">Add a link to create a new epic</a></li>
+							<li><a href="#/work/task/3">Create new epic page</a></li>
+							<li><a href="#/work/task/4">Persist input data</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<h3><a href="#/work/us/1">As a user I wish to remove epics</a></h3>
+						<ul class="kamban-card-container">
+							<li><a href="#/work/task/5">Add a link to each epic to remove it</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<ul class="kanban-panel" id="work-inprogress">
+					<li>
+						<h3><a href="#/work/us/1">As a user I wish to add epics</a></h3>
+						<ul class="kamban-card-container">
+							<li><a href="#/work/task/1">Create basic backlocg structure</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<ul class="kanban-panel" id="work-codereview">
+				</ul>
+
+				<ul class="kanban-panel" id="work-done">
+				</ul>
+
+			</section>
+			<!-- WORK -->
+
+
+			<!-- REPORT -->
+			<section id="report">
+				<canvas id="burdown-chart"></canvas>
+			</section>
+			<!-- REPORT -->
 
 
 		</div>
@@ -49,6 +168,7 @@
 			<script type="text/javascript" src="js/lib/underscore.js"></script>
 			<script type="text/javascript" src="js/lib/zepto.js"></script>
 			<script type="text/javascript" src="js/lib/backbone.js"></script>
+			<script type="text/javascript" src="js/lib/backbone.localStorage.js"></script>
 			<script data-main="js/main" src="js/lib/require.js"></script>
 		</div>
 	</body>

@@ -1,5 +1,4 @@
 @import "reset.less";
-@import "flex.prefix.less";
 
 html, body {
 	margin: 0;
@@ -9,4 +8,30 @@ html, body {
 
 .hidden {
 	display: none !important;
+}
+
+
+@topbar: 50px;
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+header {
+	//height: @topbar;
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		a {
+			display: block;
+			text-transform: uppercase;
+		}
+	}
+}
+
+div#page-content > section {
 }

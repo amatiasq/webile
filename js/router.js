@@ -1,27 +1,54 @@
 define(function(require) {
-	'use strict';
+
+	require('promise').debug = true;
+	require('lib/backbone.promise');
 
 	var page = require('views/page');
 
 	var Router = Backbone.Router.extend({
 
 		routes: {
-			'sample/:id': 'samplePage',
-			'*actions': 'render'
+			'': 'backlog',
+			'config': 'config',
+			'backlog': 'backlog',
+			'sprint-planning': 'sprintPlanning',
+			'work': 'work',
+			'report': 'report',
+			'*actions': 'render',
 		},
 
 		initialize: function() {
 			Backbone.history.start();
 		},
 
-		render: function() {
-			page.show('error');
-			console.log('Default handler');
+		config: function() {
+			page.show('config', 'Config');
+			require('views/config').render();
 		},
 
-		samplePage: function(id) {
-			page.show('sample-page');
-			require('views/sample_page').render(id);
+		backlog: function() {
+			page.show('backlog', 'Backlog');
+			require('views/backlog').render();
+		},
+
+		sprintPlanning: function() {
+			page.show('sprint-planning', 'Sprint Planning');
+			require('views/sprint_planning').render();
+		},
+
+		work: function() {
+			page.show('work', 'Work');
+			require('views/work').render();
+		},
+
+		report: function() {
+			page.show('report', 'Report');
+			require('views/report').render();
+		},
+
+		render: function() {
+			page.show('', 'Error');
+			console.log('Default handler');
 		}
 
 	});
